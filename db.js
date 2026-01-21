@@ -22,9 +22,7 @@ async function initDB() {
         latitude TEXT NOT NULL,
         longitude TEXT NOT NULL,
         adresse TEXT,
-        jour TEXT,
-        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+        jour TEXT
       )
     `);
   } catch (error) {

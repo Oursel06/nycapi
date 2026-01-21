@@ -33,7 +33,7 @@ module.exports = async (req, res) => {
         return res.status(400).json({ error: 'nom, latitude et longitude sont requis' });
       }
       const result = await client.execute({
-        sql: 'UPDATE lieu SET nom = ?, latitude = ?, longitude = ?, adresse = ?, jour = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?',
+        sql: 'UPDATE lieu SET nom = ?, latitude = ?, longitude = ?, adresse = ?, jour = ? WHERE id = ?',
         args: [nom, latitude, longitude, adresse || null, jour || null, id]
       });
       if (result.rowsAffected === 0) return res.status(404).json({ error: 'Lieu non trouvé' });
